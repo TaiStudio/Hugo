@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "electron": "^13.1.7",
+    "fs": "*",
+    "jquery": "^3.6.0",
+    "nconf": "^0.11.3",
+    "path": "^0.12.7"
+  },
+  "name": "hugo",
+  "description": "Un prompteur",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaiStudio/Hugo.git"
+  },
+  "keywords": [
+    "Tai",
+    "Studio",
+    "prompt"
+  ],
+  "author": "Tai Studio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TaiStudio/Hugo/issues"
+  },
+  "homepage": "https://github.com/TaiStudio/Hugo#readme"
+}
