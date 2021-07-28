@@ -9,10 +9,18 @@
 \--------------------------------------------------------------------------------------*/
 
 const { app, BrowserWindow, ipcMain } = require('electron');
+const { autoUpdater } = require('electron-updater');
+
+//AUTO UPDATE
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = 'info';
+autoUpdater.autoDownload = true;
 
 var control = null,
     prompteur = null;
 app.whenReady().then(() => {
+    autoUpdater.checkForUpdates();
+
     control = createWindow('app/index.html', 800, 600, true);
 
     prompteur = createWindow('app/prompteur.html', 800, 600, true);
@@ -26,7 +34,39 @@ app.whenReady().then(() => {
     ipcMain.on('script', (event, arg) => {
         prompteur.webContents.executeJavaScript(`script('${replaceALL(arg, '\n', '<br />')}')`);
     });
+    //AUTO UPDATE
+    autoUpdater.on('checking-for-update', () => {
+    });
+    autoUpdater.on('update-available', (ev, info) => {
+    });
+    autoUpdater.on('update-not-available', (ev, info) => {
+    });
+    autoUpdater.on('error', (ev, err) => {
+    });
+    autoUpdater.on('download-progress', (ev, progressObj) => {
+    });
+    autoUpdater.on('update-downloaded', (ev, info) => {
+        setTimeout(function() {
+            quit(false, true);
+        }, 5000)
+    });
 });
+
+//QUIT OR RELAUNCH
+function quit(arg, arg1){
+    for(i=0;i<allTimers.length;i++){
+        clearInterval(allTimers[i]);
+        if(i == allTimers.length -1){
+            if(arg){
+                app.relaunch();
+            }
+            if(arg1){
+                autoUpdater.quitAndInstall();
+            }
+            app.quit();
+        }
+    }
+}
 
 function createWindow(file, w, h, resize) {
     var win = new BrowserWindow({

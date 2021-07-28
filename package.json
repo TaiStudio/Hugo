@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "electron": "^13.1.7",
+    "electron-updater": "^4.3.9",
     "fs": "*",
     "jquery": "^3.6.0",
     "nconf": "^0.11.3",
@@ -12,7 +13,10 @@
   "main": "main.js",
   "devDependencies": {},
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "make": "npm run pack && npm run dist",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win --x64"
   },
   "repository": {
     "type": "git",
