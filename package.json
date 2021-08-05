@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "electron": "^13.1.7",
     "electron-log": "^4.4.1",
     "electron-updater": "^4.3.9",
     "fs": "*",
@@ -12,7 +11,9 @@
   "description": "Un prompteur",
   "version": "1.0.0",
   "main": "main.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "electron": "^13.1.7"
+  },
   "scripts": {
     "start": "electron .",
     "make": "npm run pack && npm run dist",
