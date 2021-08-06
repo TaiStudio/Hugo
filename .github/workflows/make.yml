@@ -14,15 +14,9 @@ jobs:
       - uses: actions/checkout@v2.3.4
 
       - name: Dump GitHub context
+        run: echo "$GITHUB_CONTEXT['event']['commits']['message']"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Show GitHub ref
-        run: echo "$GITHUB_REF"
-      - name: Dump event JSON
-        env:
-          EVENT_JSON_FILENAME: ${{ github.event_path }}
-        run: cat "$EVENT_JSON_FILENAME"
 
       - name: "Build & test"
         run: |
@@ -34,10 +28,12 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
-          automatic_release_tag: ${{ steps.vars.outputs.tag }}
+          automatic_release_tag: ${{ $GITHUB_CONTEXT['event']['commits']['message'] }}
           prerelease: false
-          title: ${{ steps.vars.outputs.tag }}
+          title: ${{ $GITHUB_CONTEXT['event']['commits']['message'] }}
           files: |
             dist/*.exe
             dist/*.blockmap
             dist/latest.yml
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
