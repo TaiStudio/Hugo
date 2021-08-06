@@ -15,8 +15,6 @@ jobs:
 
       - name: "Build & test"
         run: |
-          echo ${{ toJson(github.event.commits) }}
-          echo ${{ github.event.commits.message }}
           echo ${{ toJson(github.event.commits[0].message) }}
           echo ${{ github.event.commits[0].message }}
           npm install
