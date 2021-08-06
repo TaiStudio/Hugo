@@ -15,8 +15,6 @@ jobs:
 
       - name: "Build & test"
         run: |
-          echo ${{ toJson(github.event.commits[0].message) }}
-          echo ${{ github.event.commits[0].message }}
           npm install
           npm run make
           npm run postpublish
@@ -25,9 +23,9 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
-          automatic_release_tag: ${{ toJson(github.event.commits.message)}}
+          automatic_release_tag: ${{ github.event.commits[0].message }}
           prerelease: false
-          title: ${{ toJson(github.event.commits.message)}}
+          title: ${{ github.event.commits[0].message }}
           files: |
             dist/*.exe
             dist/*.blockmap
