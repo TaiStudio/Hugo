@@ -13,10 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
       - name: "Build & test"
-        run: |
-          npm install 
-          npm run make 
-          echo "done!"
+        run: npm install 
+        run: npm run make
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
