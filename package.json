@@ -19,7 +19,8 @@
     "start": "electron .",
     "make": "npm run pack && npm run dist",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --win --x64 --publish 'never'"
+    "dist": "electron-builder --win --x64 --publish 'never'",
+    "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag $PACKAGE_VERSION && git push --tags"
   },
   "repository": {
     "type": "git",

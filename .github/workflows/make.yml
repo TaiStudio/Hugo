@@ -16,12 +16,13 @@ jobs:
         run: |
           npm install
           npm run make
+          npm run postpublish
           echo "done!"
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
-          automatic_release_tag: ${{ github.ref }}
+          automatic_release_tag: ${{ github }}
           prerelease: false
           title: ${{ steps.tag.outputs.result }}
           files: |
