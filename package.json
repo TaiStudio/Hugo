@@ -8,7 +8,7 @@
     "path": "^0.12.7"
   },
   "name": "hugo",
-  "description": "Un prompteur",
+  "description": "Un prompteur.",
   "version": "1.0.0",
   "main": "main.js",
   "devDependencies": {
@@ -35,12 +35,5 @@
   "bugs": {
     "url": "https://github.com/TaiStudio/Hugo/issues"
   },
-  "homepage": "https://github.com/TaiStudio/Hugo#readme",
-  "build": {
-    "appId": "Hugo",
-    "mac": {
-      "category": "fr.tai-studio.hugo"
-    }
-  },
-  "postinstall": "electron-builder install-app-deps"
+  "homepage": "https://github.com/TaiStudio/Hugo#readme"
 }
