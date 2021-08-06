@@ -15,7 +15,8 @@ jobs:
 
       - name: "Build & test"
         run: |
-          echo ${{ toJson(github.event.commits.message)}}
+          echo ${{ toJson(github.event)}}
+          echo ${{ github.event.commits.message }}
           npm install
           npm run make
           npm run postpublish
