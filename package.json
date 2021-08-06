@@ -19,7 +19,7 @@
     "start": "electron .",
     "make": "npm run pack && npm run dist",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --win --x64 --publish 'never'",
+    "dist": "electron-builder --win --x64 --publish 'never'"
   },
   "repository": {
     "type": "git",
