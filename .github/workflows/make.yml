@@ -28,9 +28,9 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
-          automatic_release_tag: $GITHUB_CONTEXT['event']['commits']['message']
+          automatic_release_tag: $GITHUB_CONTEXT.event.commits.message
           prerelease: false
-          title: ${{ $GITHUB_CONTEXT['event']['commits']['message'] }}
+          title: $GITHUB_CONTEXT.event.commits.message
           files: |
             dist/*.exe
             dist/*.blockmap
