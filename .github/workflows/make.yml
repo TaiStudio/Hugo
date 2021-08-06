@@ -20,7 +20,7 @@ jobs:
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
         run: |
-          echo "$GITHUB_REF"
+          echo $GITHUB_REF
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
 
