@@ -12,12 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.3.4
-      - name: "Build & test"
-        run: |
-          npm install
-          npm run make
-          npm run postpublish
-          echo "done!"
 
       - name: Set output
         id: vars
@@ -28,6 +22,14 @@ jobs:
         run: |
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
+          
+      - name: "Build & test"
+        run: |
+          npm install
+          npm run make
+          npm run postpublish
+          echo "done!"
+
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
