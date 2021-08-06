@@ -17,7 +17,7 @@ jobs:
         run: |
           echo ${{ toJson(github.event.commits) }}
           echo ${{ toJson(github.event.commits) }}
-          echo ${{ toJson(github.event.commits).message }}
+          echo ${{ github.event.commits.message }}
           echo ${{ toJson(github.event.commits.message) }}
           npm install
           npm run make
