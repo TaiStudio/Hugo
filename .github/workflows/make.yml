@@ -16,6 +16,7 @@ jobs:
         run: |
           npm install
           npm run make
+          git push origin main --tags
           echo "done!"
 
       - uses: "marvinpinto/action-automatic-releases@latest"
