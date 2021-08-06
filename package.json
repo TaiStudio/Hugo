@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "electron-builder": "^22.11.7",
     "electron-log": "^4.4.1",
     "electron-updater": "^4.3.9",
     "fs": "*",
@@ -13,6 +12,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "devDependencies": {
+    "electron-builder": "^22.11.7",
     "electron": "^13.1.7"
   },
   "scripts": {
