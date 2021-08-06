@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
       - name: Check out Git repository
@@ -18,9 +18,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
-
-      - name: NPM install
-        run: npm install
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1

@@ -35,5 +35,12 @@
   "bugs": {
     "url": "https://github.com/TaiStudio/Hugo/issues"
   },
-  "homepage": "https://github.com/TaiStudio/Hugo#readme"
+  "homepage": "https://github.com/TaiStudio/Hugo#readme",
+  "build": {
+    "appId": "Hugo",
+    "mac": {
+      "category": "fr.tai-studio.hugo"
+    }
+  },
+  "postinstall": "electron-builder install-app-deps"
 }
