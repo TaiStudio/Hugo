@@ -48,7 +48,7 @@ jobs:
   build_on_win:
     runs-on: windows-2016
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
       with:
         ref: feature/github-actions        
     - uses: actions/setup-node@master
