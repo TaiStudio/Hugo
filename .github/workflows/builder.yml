@@ -51,7 +51,7 @@ jobs:
     - uses: actions/checkout@v2  
     - uses: actions/setup-node@master
       with:
-        node-version: 12
+        node-version: 14
     - name: install node tools
       run: npm install --global --production windows-build-tools@4.0.0
     - name: install node-gyp
