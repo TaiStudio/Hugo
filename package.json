@@ -1,12 +1,4 @@
 {
-  "dependencies": {
-    "electron-log": "^4.4.1",
-    "electron-updater": "^4.3.9",
-    "fs": "0.0.1-security",
-    "jquery": "^3.6.0",
-    "nconf": "^0.11.3",
-    "path": "^0.12.7"
-  },
   "name": "hugo",
   "description": "Un prompteur.",
   "version": "1.0.0",
@@ -14,6 +6,14 @@
   "devDependencies": {
     "electron": "^13.1.8",
     "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.1",
+    "electron-updater": "^4.3.9",
+    "fs": "0.0.1-security",
+    "jquery": "^3.6.0",
+    "nconf": "^0.11.3",
+    "path": "^0.12.7"
   },
   "scripts": {
     "start": "electron .",
