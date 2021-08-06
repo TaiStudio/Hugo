@@ -16,6 +16,7 @@ jobs:
         run: |
           npm install
           npm run make
+          npm version minor -m "bump minor to %s"
           echo "done!"
 
       - uses: "marvinpinto/action-automatic-releases@latest"
@@ -23,7 +24,7 @@ jobs:
           repo_token: "${{ secrets.GH_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
-          title: "Development Build"
+          title: ${{ steps.tag.outputs.result }}
           files: |
             dist/*.exe
             dist/*.blockmap
