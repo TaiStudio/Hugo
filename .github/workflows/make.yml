@@ -22,8 +22,9 @@ jobs:
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
           automatic_release_tag: "latest"
-          prerelease: true
+          prerelease: false
           title: "Development Build"
           files: |
-            dist/
-            *.jar
+            dist/*.exe
+            dist/*.blockmap
+            dist/latest.yml
