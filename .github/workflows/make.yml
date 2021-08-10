@@ -20,6 +20,7 @@ jobs:
           echo "done!"
 
       - uses: "marvinpinto/action-automatic-releases@latest"
+        if: startsWith('${{ github.event.commits[0].message }}''v')
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
           automatic_release_tag: "${{ github.event.commits[0].message }}"
