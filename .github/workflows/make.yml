@@ -19,8 +19,9 @@ jobs:
           npm run make
           echo "done!"
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: "Deploy"
         if: ${{ startsWith(github.event.commits[0].message, 'v') == true }}
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GH_TOKEN }}"
           automatic_release_tag: "${{ github.event.commits[0].message }}"
