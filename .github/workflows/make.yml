@@ -19,13 +19,13 @@ jobs:
           npm run make
           echo "done!"
       - name: Edit Files
-          uses: TaiStudio/action-edit-YML@main
-          with:
-            type: 'single'
-            files: "./dist/lastest.yml"
-            elementSTR: "['files'][0]['url']"
-            replace: "-"
-            replaceFor: "."
+        uses: TaiStudio/action-edit-YML@main
+        with:
+          type: 'single'
+          files: "./dist/lastest.yml"
+          elementSTR: "['files'][0]['url']"
+          replace: "-"
+          replaceFor: "."
       - name: "Deploy"
         if: ${{ startsWith(github.event.commits[0].message, 'v') == true }}
         uses: "marvinpinto/action-automatic-releases@latest"
