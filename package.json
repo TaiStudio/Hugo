@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "main": "main.js",
   "devDependencies": {
-    "electron": "^14.0.0",
+    "electron": "^14.0.1",
     "electron-builder": "^22.11.7"
   },
   "dependencies": {

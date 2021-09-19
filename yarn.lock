@@ -631,9 +631,9 @@ electron-updater@^4.3.9:
     lodash.isequal "^4.5.0"
     semver "^7.3.5"
 
-electron@^14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-14.0.0.tgz#a096484bfbf71d87fc0fa85a943a7869d6b9bf94"
+electron@^14.0.1:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-14.0.1.tgz#967da47895a77a9af8a7938e9266cd4a75ab24c4"
   dependencies:
     "@electron/get" "^1.0.1"
     "@types/node" "^14.6.2"
