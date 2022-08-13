@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "electron-log": "^4.4.8",
-    "electron-updater": "^5.0.1",
+    "electron-updater": "^5.2.1",
     "fs": "0.0.1-security",
     "jquery": "^3.6.0",
     "nconf": "^0.12.0",
