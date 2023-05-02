@@ -14,5 +14,7 @@ Un prompteur
 5: envoy
 ```
 
+or download: [HERE](https://github.com/TaiStudio/Hugo/releases)
+
 <h2>📜 License</h2>
 MIT
