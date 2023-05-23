@@ -1,7 +1,7 @@
 {
   "name": "hugo",
   "description": "Un prompteur.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "main.js",
   "devDependencies": {
     "electron": "^24.3.1",
