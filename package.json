@@ -5,7 +5,7 @@
   "main": "main.js",
   "devDependencies": {
     "electron": "^27.0.0",
-    "electron-builder": "^24.4.0"
+    "electron-builder": "^24.6.4"
   },
   "dependencies": {
     "electron-log": "^4.4.8",
